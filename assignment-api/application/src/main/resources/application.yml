@@ -1,0 +1,25 @@
+server:
+  port: 8080
+  logging:
+    level:
+      org.springframework.web.servlet.view: DEBUG  # Log Thymeleaf view resolution process
+      org.springframework.web.servlet.DispatcherServlet: DEBUG  # Log Spring MVC DispatcherServlet process
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:companydb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update  # Automatically update the schema, set to 'none' in production
+    show-sql: true  # Show SQL in the logs for debugging
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+
